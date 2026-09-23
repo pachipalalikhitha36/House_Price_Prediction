@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>House Price Prediction</title>
+</head>
+
+<body>
+
+    <h1>House Price Prediction</h1>
+
+    <p>Enter House Details</p>
+
+    <form action="/predict" method="post">
+
+        <label>Area:</label>
+        <input type="number" name="area" required>
+
+        <br><br>
+
+        <label>Bedrooms:</label>
+        <input type="number" name="bedrooms" required>
+
+        <br><br>
+
+        <label>Bathrooms:</label>
+        <input type="number" name="bathrooms" required>
+
+        <br><br>
+
+        <button type="submit">Predict Price</button>
+
+    </form>
+
+    {% if prediction is defined %}
+        <hr>
+        <h2>Predicted House Price: ₹{{ prediction }}</h2>
+    {% endif %}
+
+</body>
+
+</html>
